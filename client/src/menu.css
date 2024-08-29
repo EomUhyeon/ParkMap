@@ -1,0 +1,46 @@
+.left_menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #bbb;     /* 연한 회색 배경 */
+  color: #000;                /* 검은색 텍스트 */
+  transition: transform 0.3s ease;
+  z-index: 1000;                /* 사이드바를 맨 위에 배치 */
+}
+.left_menu_closed {
+  transform: translateX(-250px);
+}
+.left_menu_btn {
+  position: absolute;
+  right: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #888;     /* 중간 회색 배경 */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.search_box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.search_bar {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  width: calc(100% - 100px);
+  margin-right: 10px;
+}
+.search_bnt {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
