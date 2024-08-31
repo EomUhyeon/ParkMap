@@ -1,3 +1,13 @@
+.leaflet-top.leaflet-left {
+    left: auto !important;
+    right: 10px;
+    top: 10px;
+}
+.map-size {
+    width: calc(100vw - 16px);
+    height: calc(100vh - 16px);
+}
+
 .custom-marker {
     width: 30px;
     height: 30px;
@@ -6,35 +16,27 @@
     border: 2px solid #D3D3D3;                  /* 테두리 색상 */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);     /* 그림자 */
 }
-
 .marker-children-park {
     background-color: #FFD1DC;
 }
-
 .marker-neighborhood-park {
     background-color: #AEC6CF;
 }
-
 .marker-small-park {
     background-color: #FDFD96;
 }
-
 .marker-cultural-park {
     background-color: #CBAACB;
 }
-
 .marker-waterfront-park {
     background-color: #77DD77;
 }
-
 .marker-sports-park {
     background-color: #FFB347;
 }
-
 .marker-historical-park {
     background-color: #B39EB5;
 }
-
 .marker-cemetery-park {
     background-color: #CFCFC4;
 }
