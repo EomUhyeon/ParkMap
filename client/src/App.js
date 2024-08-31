@@ -1,5 +1,5 @@
 import "./App.css";
-import MapUploader from "./map.js";
+import MapUploader from "./map.jss";
 import Menu from "./menu.js";
 
 function App() {
