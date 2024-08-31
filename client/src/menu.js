@@ -14,7 +14,7 @@ function Menu() {
             return(
                 <div className="search_box">
                 <input type="text" placeholder="공원 검색..." className="search_bar" />
-                <button className="search_bnt">검색</button>
+                <button className="search_bnt"></button>
                 </div>
             );  
         };
