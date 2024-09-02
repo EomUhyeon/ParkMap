@@ -1,26 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { setOnPopupOnChange, get_park_selection, setOnParkSelectionChange } from './data_controller.js';
+import { setOnPopupOnChange, setOnParkSelectionChange } from './data_controller.js';
 import MenuDataUploader from './menu_data_uploader.js';
 import "./menu.css";
 
 
 function Menu() {
-    const [isPopupOn, setIsPopupOn] = useState(false);
+    // const [isPopupOn, setIsPopupOn] = useState(false);
     const [parkSelection, setParkSelection] = useState(null);
 
     useEffect(() => {
-        // popup_on 상태가 변경될 때 호출되는 콜백 설정
-        setOnPopupOnChange((newPopupOn) => {
-            setIsPopupOn(newPopupOn);
-        });
+        // setOnPopupOnChange((newPopupOn) => {
+        //     setIsPopupOn(newPopupOn);
+        // });
 
-        // park_selection 상태가 변경될 때 호출되는 콜백 설정
         setOnParkSelectionChange((newParkSelection) => {
             setParkSelection(newParkSelection);
         });
     }, []);
-
-    // console.log(parkSelection);
 
     const LeftMenu = () => {
         const [menuOpen, setMenuOpen] = useState(true);
@@ -80,9 +76,7 @@ function Menu() {
                 <Search />
                 <Facilities />
                 <hr className="gray-line"></hr>
-                
                 <MenuDataUploader parkSelection={parkSelection} />
-             
                 <hr className="gray-line"></hr>
                 <div>추천 공원</div>
                 <hr className="gray-line"></hr>

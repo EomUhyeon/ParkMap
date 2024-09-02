@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./App.css";
 import MapUploader from "./map.js";
 import Menu from "./menu.js";

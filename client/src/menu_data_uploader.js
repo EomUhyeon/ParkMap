@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import parkData from './data/경기도_안산시_도시공원정보_20231127.json';
-import { set_park_selection, set_popup_on, setPopupOn } from './data_controller.js';
+import { set_popup_on } from './data_controller.js';
 import ParkDataUpload from './park_data_upload.js'
 
 
 function MenuDataUploader({ parkSelection }) {
+    console.log(parkSelection);
     const { 
         관리번호: park_num = '', 
         공원명: park_name = '', 
         공원구분: park_category = '' 
     } = parkSelection || {};
 
-    set_popup_on(false);
+    // useEffect(() => {
+    //     set_popup_on(false);
+    // }, []);
 
     return (
         <>
