@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import parkData from './data/경기도_안산시_도시공원정보_20231127.json';
-import { set_park_selection, clear_park_selection } from './data_controller.js';
 import ParkDataUpload from './park_data_upload.js'
 
 function PopupDataUploader({ 관리번호, 공원명, 공원구분 }) {

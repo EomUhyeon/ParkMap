@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { setOnParkSelectionChange } from './data_controller.js';
+import Search from './search.js'
 import MenuDataUploader from './menu_data_uploader.js';
 import "./menu.css";
 
@@ -20,18 +21,7 @@ function Menu() {
         const LeftMenuBnt = () => {
             setMenuOpen(!menuOpen);
         };
-
-        const Search = () => {
-            return(
-                <>
-                    <div className="search_box">
-                        <input type="text" placeholder="공원 검색..." className="search_bar" />
-                        <button className="search_bnt"></button>
-                    </div>
-                </>
-            );  
-        };
-
+        
         const Facilities = () => {
             return(
                 <div className="facilities_box">

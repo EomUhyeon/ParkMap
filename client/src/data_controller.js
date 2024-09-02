@@ -16,4 +16,3 @@ export const clear_park_selection = () => {
     onParkSelectionChange(park_selection); 
 };
 
-
