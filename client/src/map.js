@@ -5,7 +5,7 @@ import MapMarker from './marker.js'
 import './map.css';
 
 
-function MapUploader({setPark_data}) {
+function MapUploader() {
     const MapLoad = ({ children }) => {
         let start_point= [37.316946, 126.830447];
         let start_zoom = 14;
@@ -23,7 +23,7 @@ function MapUploader({setPark_data}) {
     return (
         <>
             <MapLoad>
-                <MapMarker setPark_data={setPark_data}/>
+                <MapMarker />
             </MapLoad>
         </>
     );

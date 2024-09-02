@@ -5,15 +5,15 @@ import Menu from "./menu.js";
 
 
 function App() {
-  const [park_data, setPark_data] = useState(null);
 
   return (
     <div className="App">
-        <MapUploader setPark_data={setPark_data}/>
-        <Menu park_data={park_data}/>
+        <MapUploader />
+        <Menu />
     </div>
   );
 };
 
 
 export default App;
+

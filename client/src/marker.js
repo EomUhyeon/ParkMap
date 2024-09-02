@@ -1,10 +1,10 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { Marker, Tooltip, Popup } from 'react-leaflet';
+import React from "react";
+import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import markerData from './data/경기도_안산시_공원기본정보_20231127.json';
-import ParkDataUploader from './park_data.js'
+import PopupDataUploader from './popup_data_uploader.js'
 
-function MapMarker({setPark_data}) {
+function MapMarker() {
     const ParkCategory = (category) => {
         switch (category) {
             case '어린이공원': return 'marker-children-park';
@@ -19,30 +19,7 @@ function MapMarker({setPark_data}) {
         }
     };
 
-    const MakeMarker = ({setPark_data}) => {
-        // useEffect(() => {
-        //     const handleMarkerClick = (marker) => {
-        //         setPark_data({
-        //             관리번호: marker.관리번호,
-        //             공원명: marker.공원명,
-        //             공원구분: marker.공원구분
-        //         });
-        //     };
-    
-        //     markerData.forEach((marker) => {
-        //         const markerInstance = new L.Marker([marker.위도, marker.경도], {
-        //             icon: new L.DivIcon({
-        //                 className: `custom-marker ${ParkCategory(marker.공원구분)}`,
-        //                 iconSize: [20, 20],
-        //                 iconAnchor: [10, 10],
-        //                 popupAnchor: [0, -10],
-        //             }),
-        //         });
-    
-        //         markerInstance.on('click', () => handleMarkerClick(marker));
-        //     });
-        // }, [setPark_data]);
-
+    const MakeMarker = () => {
         return (
             <>
             {markerData.map((marker) => (
@@ -55,33 +32,12 @@ function MapMarker({setPark_data}) {
                     })}
                     key={marker.관리번호}
                     position={[marker.위도, marker.경도]}
-                    // eventHandlers={{
-                    //     click: () => handleMarkerClick(marker),
-                    // }}
-                    // eventHandlers={{
-                    //     click: () => {
-                    //         setPark_data({
-                    //             관리번호: marker.관리번호,
-                    //             공원명: marker.공원명,
-                    //             공원구분: marker.공원구분
-                    //         });
-                    //     },
-                    // }}
                 >
-                    <Popup 
-                        // onOpen={() => {
-                        //     setPark_data({
-                        //         관리번호: marker.관리번호,
-                        //         공원명: marker.공원명,
-                        //         공원구분: marker.공원구분
-                        //     });
-                        // }}
-                    >
-                        <ParkDataUploader
+                    <Popup>
+                        <PopupDataUploader
                             관리번호={marker.관리번호} 
                             공원명={marker.공원명} 
                             공원구분={marker.공원구분}
-                            setPark_data={setPark_data}
                         />
                     </Popup>
                 </Marker>
@@ -92,7 +48,7 @@ function MapMarker({setPark_data}) {
 
     return (
         <>
-            <MakeMarker setPark_data={setPark_data}/>
+            <MakeMarker />
         </>
     );
 };
