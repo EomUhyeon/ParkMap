@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { setOnPopupOnChange, setOnParkSelectionChange } from './data_controller.js';
+import { setOnParkSelectionChange } from './data_controller.js';
 import MenuDataUploader from './menu_data_uploader.js';
 import "./menu.css";
 
 
 function Menu() {
-    // const [isPopupOn, setIsPopupOn] = useState(false);
     const [parkSelection, setParkSelection] = useState(null);
 
     useEffect(() => {
-        // setOnPopupOnChange((newPopupOn) => {
-        //     setIsPopupOn(newPopupOn);
-        // });
-
         setOnParkSelectionChange((newParkSelection) => {
             setParkSelection(newParkSelection);
         });

@@ -1,28 +1,19 @@
 let park_selection = { 관리번호: '', 공원명: '', 공원구분: '' };
 let onParkSelectionChange = () => {};   // ParkSelection 콜백 생성
-let popup_on = false;
-let onPopupOnChange = () => {};         // PopupOn 콜백 생성
 
-
+export const setOnParkSelectionChange = (callback) => {
+    onParkSelectionChange = callback;
+};
 export const set_park_selection = (data) => {
-    park_selection = data; 
-    onParkSelectionChange(data);        // 데이터가 설정될 때 콜백 호출
+    park_selection = data ; 
+    onParkSelectionChange(data);
 };
 export const get_park_selection = () => {
     return park_selection; 
 };
-export const setOnParkSelectionChange = (callback) => {
-    onParkSelectionChange = callback;
+export const clear_park_selection = () => {
+    park_selection = { 관리번호: '', 공원명: '', 공원구분: '' }; 
+    onParkSelectionChange(park_selection); 
 };
 
-export const set_popup_on = (data) => {
-    popup_on = data;
-    onPopupOnChange(data);              // 데이터가 설정될 때 콜백 호출
-};
-export const get_popup_on = () => {
-    return popup_on; 
-};
-export const setOnPopupOnChange = (callback) => {
-    onPopupOnChange = callback;
-};
 

@@ -2,6 +2,7 @@ import React from "react";
 import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import markerData from './data/경기도_안산시_공원기본정보_20231127.json';
+import { set_park_selection } from './data_controller.js';
 import PopupDataUploader from './popup_data_uploader.js'
 
 function MapMarker() {
@@ -32,6 +33,15 @@ function MapMarker() {
                     })}
                     key={marker.관리번호}
                     position={[marker.위도, marker.경도]}
+                    eventHandlers={{
+                        click: () => {
+                            set_park_selection({
+                                관리번호: marker.관리번호,
+                                공원명: marker.공원명,
+                                공원구분: marker.공원구분
+                            });
+                        }
+                      }}
                 >
                     <Popup>
                         <PopupDataUploader
