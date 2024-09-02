@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import ParkDataPage from './park_data_page';
 import "./menu.css";
 
 
-function Menu() {
-    const LeftMenu = () => {
+function Menu({park_data}) {
+    const LeftMenu = ({park_data}) => {
         const [menuOpen, setMenuOpen] = useState(true);
         const left_menu = menuOpen ? 'left_menu' : 'left_menu left_menu_closed';
 
@@ -53,14 +54,6 @@ function Menu() {
             );
         };
 
-        const SearchContents = () => {
-            return(
-                <div>검색 내용
-
-                </div>
-            );
-        };
-
         return (
             <div className={left_menu}>
                 <button className="left_menu_btn" onClick={LeftMenuBnt}>
@@ -69,7 +62,7 @@ function Menu() {
                 <Search />
                 <Facilities />
                 <hr className="gray-line"></hr>
-                <SearchContents />
+                <ParkDataPage park_data={park_data}/>
                 <hr className="gray-line"></hr>
                 <div>추천 공원</div>
                 <hr className="gray-line"></hr>
@@ -82,7 +75,7 @@ function Menu() {
     };
 
     return (
-        <LeftMenu />
+        <LeftMenu park_data={park_data} />
     );
 };
 

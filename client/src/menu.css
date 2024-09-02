@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 390px;
-  height: 100%;
+  height: calc(100vh - 16px);
   display: flex;
   flex-direction: column;
   background-color: white;      /* 연한 회색 배경 */
