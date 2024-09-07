@@ -30,6 +30,12 @@ function Search() {
         }
     };
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleSearch();
+        }
+    };
+
     return (
         <>
             <div className="search_box">
@@ -39,6 +45,7 @@ function Search() {
                     className="search_bar"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
+                    onKeyDown={handleKeyDown}  // 엔터 키를 누르면 검색 실행
                 />
                 <button className="search_bnt" onClick={handleSearch}></button>
             </div>

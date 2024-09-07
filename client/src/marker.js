@@ -1,12 +1,26 @@
-import React from "react";
-import { Marker, Popup } from 'react-leaflet';
+import React, { useState, useEffect, useRef } from "react";
+import { Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import markerData from './data/경기도_안산시_공원기본정보_20231127.json';
-import { set_park_selection } from './data_controller.js';
+import { set_park_selection, get_park_selection, setOnParkSelectionChange } from './data_controller.js';
 import PopupDataUploader from './popup_data_uploader.js'
 
 
 function MapMarker() {
+    const popupRefs = useRef({});  // 모든 팝업의 ref를 저장할 객체
+    const map = useMap();  // 맵 인스턴스를 가져옴
+
+    useEffect(() => {
+        map.whenReady(() => {
+            const targetPopup = popupRefs.current['41271-00007'];
+            if (targetPopup) {
+                // 맵이 로드되고 난 후에 팝업을 엽니다.
+                targetPopup.openOn(map);
+            }
+        });
+    }, [map]);
+
+
     const ParkCategory = (category) => {
         switch (category) {
             case '어린이공원': return 'marker-children-park';
@@ -44,7 +58,7 @@ function MapMarker() {
                         }
                       }}
                 >
-                    <Popup>
+                    <Popup ref={(ref) => popupRefs.current[marker.관리번호] = ref}>
                         <PopupDataUploader
                             관리번호={marker.관리번호} 
                             공원명={marker.공원명} 
