@@ -7,18 +7,18 @@ import PopupDataUploader from './popup_data_uploader.js'
 
 
 function MapMarker() {
-    const popupRefs = useRef({});  // 모든 팝업의 ref를 저장할 객체
-    const map = useMap();  // 맵 인스턴스를 가져옴
+    // const popupRefs = useRef({});  // 모든 팝업의 ref를 저장할 객체
+    // const map = useMap();  // 맵 인스턴스를 가져옴
 
-    useEffect(() => {
-        map.whenReady(() => {
-            const targetPopup = popupRefs.current['41271-00007'];
-            if (targetPopup) {
-                // 맵이 로드되고 난 후에 팝업을 엽니다.
-                targetPopup.openOn(map);
-            }
-        });
-    }, [map]);
+    // useEffect(() => {
+    //     map.whenReady(() => {
+    //         const targetPopup = popupRefs.current['41271-00007'];
+    //         if (targetPopup) {
+    //             // 맵이 로드되고 난 후에 팝업을 엽니다.
+    //             targetPopup.openOn(map);
+    //         }
+    //     });
+    // }, [map]);
 
 
     const ParkCategory = (category) => {
@@ -58,7 +58,7 @@ function MapMarker() {
                         }
                       }}
                 >
-                    <Popup ref={(ref) => popupRefs.current[marker.관리번호] = ref}>
+                    <Popup >
                         <PopupDataUploader
                             관리번호={marker.관리번호} 
                             공원명={marker.공원명} 

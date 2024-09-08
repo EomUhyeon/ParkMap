@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 // 원본 JSON 파일 경로 설정
-const jsonFilePath = path.join(__dirname, './park_json/경기도_안산시_도시공원정보_20231127.json');
+const jsonFilePath = path.join(__dirname, './park_json/전국도시공원정보표준데이터.json');
 
 // 출력 JSON 파일 경로 설정
-const outputJsonFilePath = path.join(__dirname, './경기도_안산시_공원기본정보_20231127.json');
+const outputJsonFilePath = path.join(__dirname, './전국도시공원정보기본데이터.json');
 
 // JSON 파일 읽기
 fs.readFile(jsonFilePath, 'utf8', (err, data) => {

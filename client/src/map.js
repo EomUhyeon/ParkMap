@@ -7,7 +7,7 @@ import './map.css';
 
 function MapUploader() {
     const [startPoint, setStartPoint] = useState([37.316946, 126.830447]);
-    const [startZoom, setStartZoom] = useState(14);
+    const [startZoom, setStartZoom] = useState(13);
     const MapLoad = ({ children }) => {
         return (
             <MapContainer center={startPoint} zoom={startZoom} className="map-size">
