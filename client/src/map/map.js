@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import React from 'react';
+import { MapContainer,TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import 
 import MapMarker from './marker.js'
 import './map.css';
 
 
 function MapUploader() {
-    const [startPoint, setStartPoint] = useState([37.316946, 126.830447]);
-    const [startZoom, setStartZoom] = useState(13);
-    const MapLoad = ({ children }) => {
+    const start_point = [37.316946, 126.830447];
+    const start_zoom = 13;
+
+    function MapLoad({ children }){
         return (
-            <MapContainer center={startPoint} zoom={startZoom} className="map-size">
+            <MapContainer center={start_point} zoom={start_zoom} className="map-size">
                 <TileLayer 
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' 
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -23,7 +25,7 @@ function MapUploader() {
     return (
         <>
             <MapLoad>
-                <MapMarker />
+                <MapMarker start_point={start_point} start_zoom={start_zoom}/>
             </MapLoad>
         </>
     );

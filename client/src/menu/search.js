@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import markerData from './data/경기도_안산시_공원기본정보_20231127.json';
-import { set_park_selection } from './data_controller.js';
+import markerData from '../data/경기도_안산시_공원기본정보_20231127.json';
+import { set_park_selection } from '../data_controller.js';
 
 
 function Search() {

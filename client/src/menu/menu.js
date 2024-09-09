@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { setOnParkSelectionChange } from './data_controller.js';
+import { setOnParkSelectionChange } from '../data_controller.js';
 import Search from './search.js'
 import MenuDataUploader from './menu_data_uploader.js';
 import "./menu.css";

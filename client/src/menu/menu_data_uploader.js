@@ -1,5 +1,5 @@
 import React from "react";
-import parkData from './data/경기도_안산시_도시공원정보_20231127.json';
+import parkData from '../data/경기도_안산시_도시공원정보_20231127.json';
 import ParkDataUpload from './park_data_upload.js'
 
 

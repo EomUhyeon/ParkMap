@@ -1,15 +1,14 @@
-import "./App.css";
-import MapUploader from "./map.js";
-import Menu from "./menu.js";
+import MapUploader from "./map/map.js";
+import Menu from "./menu/menu.js";
 
 
 function App() {
 
   return (
-    <div className="App">
+    <>
         <MapUploader />
         <Menu />
-    </div>
+    </>
   );
 };
 
